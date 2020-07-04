@@ -1,0 +1,450 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Tile/pios.png" type="Texture" id=1]
+[ext_resource path="res://Player/Mario.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tile/colina_2.png" type="Texture" id=3]
+[ext_resource path="res://Tile/colina_3.png" type="Texture" id=4]
+[ext_resource path="res://Caja/Caja.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Ladrillo/Ladrillo.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Font/Piedra_regular.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Tile/Tile2.png" type="Texture" id=8]
+[ext_resource path="res://Tile/cono.png" type="Texture" id=9]
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://World.gd" type="Script" id=11]
+[ext_resource path="res://Sprite/coin.png" type="Texture" id=12]
+[ext_resource path="res://Tile/la.png" type="Texture" id=13]
+[ext_resource path="res://Tile/torre.png" type="Texture" id=14]
+[ext_resource path="res://Sound/Super.wav" type="AudioStream" id=15]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 64, 64, 32, 64, 32, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="TileSet" id=6]
+0/name = "pios.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "colina_2.png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 160, 96 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "colina_3.png 2"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 96, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Tile2.png 3"
+3/texture = ExtResource( 8 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 128, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 2 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "cono.png 4"
+4/texture = ExtResource( 9 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 64, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 3 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "la.png 5"
+5/texture = ExtResource( 13 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 32, 32 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 5 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "torre.png 6"
+6/texture = ExtResource( 14 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 160, 192 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+
+[node name="World" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 3904.0
+margin_bottom = 512.0
+color = Color( 0.192157, 0.219608, 0.47451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="text_mario" type="Label" parent="CanvasLayer"]
+margin_left = 100.0
+margin_right = 196.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 7 )
+text = "MARIO"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_puntaje" type="Label" parent="CanvasLayer"]
+margin_left = 100.0
+margin_top = 30.0
+margin_right = 196.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 7 )
+text = "000000"
+align = 1
+max_lines_visible = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_x" type="Label" parent="CanvasLayer"]
+margin_left = 305.0
+margin_top = 30.0
+margin_right = 401.0
+margin_bottom = 113.0
+custom_fonts/font = ExtResource( 7 )
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_coin" type="Label" parent="CanvasLayer"]
+margin_left = 290.0
+margin_top = 30.0
+margin_right = 386.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 7 )
+text = "00"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_world" type="Label" parent="CanvasLayer"]
+margin_left = 500.0
+margin_right = 597.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 7 )
+text = "WORLD"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_mundo" type="Label" parent="CanvasLayer"]
+margin_left = 500.0
+margin_top = 30.0
+margin_right = 596.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 7 )
+text = "1-1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_time" type="Label" parent="CanvasLayer"]
+margin_left = 850.0
+margin_right = 947.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 7 )
+text = "TIME"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_tiempo" type="Label" parent="CanvasLayer"]
+margin_left = 850.0
+margin_top = 30.0
+margin_right = 946.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 7 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon_coin" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 300, 50 )
+texture = ExtResource( 12 )
+hframes = 3
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 6 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( 122, 0, 0, 123, 0, 0, 65658, 0, 0, 65659, 0, 0, 131194, 0, 0, 131195, 0, 0, 196730, 0, 0, 196731, 0, 0, 327678, 0, 0, 327679, 0, 0, 262266, 0, 0, 262267, 0, 0, 393214, 0, 0, 393215, 0, 0, 327802, 0, 0, 327803, 0, 0, 458750, 0, 0, 458751, 0, 0, 393338, 0, 0, 393339, 0, 0, 524286, 0, 0, 524287, 0, 0, 458874, 0, 0, 458875, 0, 0, 589822, 0, 0, 589823, 0, 0, 524387, 5, 0, 524388, 5, 0, 524410, 0, 0, 524411, 0, 0, 655358, 0, 0, 655359, 0, 0, 589922, 5, 0, 589923, 5, 0, 589924, 5, 0, 589946, 0, 0, 589947, 0, 0, 720894, 0, 0, 720895, 0, 0, 655457, 5, 0, 655458, 5, 0, 655459, 5, 0, 655460, 5, 0, 655473, 6, 0, 655482, 0, 0, 655483, 0, 0, 786430, 0, 0, 786431, 0, 0, 720992, 5, 0, 720993, 5, 0, 720994, 5, 0, 720995, 5, 0, 720996, 5, 0, 721018, 0, 0, 721019, 0, 0, 851966, 0, 0, 851967, 0, 0, 786513, 5, 0, 786516, 5, 0, 786527, 5, 0, 786528, 5, 0, 786529, 5, 0, 786530, 5, 0, 786531, 5, 0, 786532, 5, 0, 786554, 0, 0, 786555, 0, 0, 917502, 0, 0, 917503, 0, 0, 851969, 1, 0, 852008, 1, 0, 852041, 1, 0, 852048, 5, 0, 852049, 5, 0, 852052, 5, 0, 852053, 5, 0, 852062, 5, 0, 852063, 5, 0, 852064, 5, 0, 852065, 5, 0, 852066, 5, 0, 852067, 5, 0, 852068, 5, 0, 852071, 1, 0, 852090, 0, 0, 852091, 0, 0, 983038, 0, 0, 983039, 0, 0, 917511, 2, 0, 917524, 4, 0, 917559, 2, 0, 917583, 5, 0, 917584, 5, 0, 917585, 5, 0, 917588, 5, 0, 917589, 5, 0, 917590, 5, 0, 917597, 5, 0, 917598, 5, 0, 917599, 5, 0, 917600, 5, 0, 917601, 5, 0, 917602, 5, 0, 917603, 5, 0, 917604, 5, 0, 917623, 2, 0, 917626, 0, 0, 917627, 0, 0, 1048574, 0, 0, 1048575, 0, 0, 983118, 5, 0, 983119, 5, 0, 983120, 5, 0, 983121, 5, 0, 983124, 5, 0, 983125, 5, 0, 983126, 5, 0, 983127, 5, 0, 983132, 5, 0, 983133, 5, 0, 983134, 5, 0, 983135, 5, 0, 983136, 5, 0, 983137, 5, 0, 983138, 5, 0, 983139, 5, 0, 983140, 5, 0, 983149, 5, 0, 983162, 0, 0, 983163, 0, 0, 1114110, 0, 0, 1114111, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0, 1048610, 0, 0, 1048611, 0, 0, 1048612, 0, 0, 1048613, 0, 0, 1048614, 0, 0, 1048615, 0, 0, 1048616, 0, 0, 1048617, 0, 0, 1048618, 0, 0, 1048619, 0, 0, 1048620, 0, 0, 1048621, 0, 0, 1048622, 0, 0, 1048623, 0, 0, 1048624, 0, 0, 1048625, 0, 0, 1048626, 0, 0, 1048627, 0, 0, 1048628, 0, 0, 1048629, 0, 0, 1048630, 0, 0, 1048631, 0, 0, 1048632, 0, 0, 1048633, 0, 0, 1048634, 0, 0, 1048635, 0, 0, 1048636, 0, 0, 1048637, 0, 0, 1048638, 0, 0, 1048639, 0, 0, 1048640, 0, 0, 1048641, 0, 0, 1048642, 0, 0, 1048643, 0, 0, 1048644, 0, 0, 1048645, 0, 0, 1048646, 0, 0, 1048647, 0, 0, 1048648, 0, 0, 1048649, 0, 0, 1048650, 0, 0, 1048651, 0, 0, 1048652, 0, 0, 1048653, 0, 0, 1048654, 0, 0, 1048655, 0, 0, 1048656, 0, 0, 1048657, 0, 0, 1048658, 0, 0, 1048659, 0, 0, 1048660, 0, 0, 1048661, 0, 0, 1048662, 0, 0, 1048663, 0, 0, 1048664, 0, 0, 1048665, 0, 0, 1048666, 0, 0, 1048667, 0, 0, 1048668, 0, 0, 1048669, 0, 0, 1048670, 0, 0, 1048671, 0, 0, 1048672, 0, 0, 1048673, 0, 0, 1048674, 0, 0, 1048675, 0, 0, 1048676, 0, 0, 1048677, 0, 0, 1048678, 0, 0, 1048679, 0, 0, 1048680, 0, 0, 1048681, 0, 0, 1048682, 0, 0, 1048683, 0, 0, 1048684, 0, 0, 1048685, 0, 0, 1048686, 0, 0, 1048687, 0, 0, 1048688, 0, 0, 1048689, 0, 0, 1048690, 0, 0, 1048691, 0, 0, 1048692, 0, 0, 1048693, 0, 0, 1048694, 0, 0, 1048695, 0, 0, 1048696, 0, 0, 1048697, 0, 0, 1048698, 0, 0, 1048699, 0, 0, 1179646, 0, 0, 1179647, 0, 0, 1114112, 0, 0, 1114113, 0, 0, 1114114, 0, 0, 1114115, 0, 0, 1114116, 0, 0, 1114117, 0, 0, 1114118, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1114127, 0, 0, 1114128, 0, 0, 1114129, 0, 0, 1114130, 0, 0, 1114131, 0, 0, 1114132, 0, 0, 1114133, 0, 0, 1114134, 0, 0, 1114135, 0, 0, 1114136, 0, 0, 1114137, 0, 0, 1114138, 0, 0, 1114139, 0, 0, 1114140, 0, 0, 1114141, 0, 0, 1114142, 0, 0, 1114146, 0, 0, 1114147, 0, 0, 1114148, 0, 0, 1114149, 0, 0, 1114150, 0, 0, 1114151, 0, 0, 1114152, 0, 0, 1114153, 0, 0, 1114154, 0, 0, 1114155, 0, 0, 1114156, 0, 0, 1114157, 0, 0, 1114158, 0, 0, 1114159, 0, 0, 1114160, 0, 0, 1114161, 0, 0, 1114162, 0, 0, 1114163, 0, 0, 1114164, 0, 0, 1114165, 0, 0, 1114166, 0, 0, 1114167, 0, 0, 1114168, 0, 0, 1114169, 0, 0, 1114170, 0, 0, 1114171, 0, 0, 1114172, 0, 0, 1114173, 0, 0, 1114174, 0, 0, 1114175, 0, 0, 1114176, 0, 0, 1114177, 0, 0, 1114178, 0, 0, 1114179, 0, 0, 1114180, 0, 0, 1114181, 0, 0, 1114182, 0, 0, 1114183, 0, 0, 1114184, 0, 0, 1114185, 0, 0, 1114186, 0, 0, 1114187, 0, 0, 1114188, 0, 0, 1114189, 0, 0, 1114190, 0, 0, 1114191, 0, 0, 1114192, 0, 0, 1114193, 0, 0, 1114194, 0, 0, 1114195, 0, 0, 1114196, 0, 0, 1114197, 0, 0, 1114198, 0, 0, 1114199, 0, 0, 1114200, 0, 0, 1114201, 0, 0, 1114202, 0, 0, 1114203, 0, 0, 1114204, 0, 0, 1114205, 0, 0, 1114206, 0, 0, 1114207, 0, 0, 1114208, 0, 0, 1114209, 0, 0, 1114210, 0, 0, 1114211, 0, 0, 1114212, 0, 0, 1114213, 0, 0, 1114214, 0, 0, 1114215, 0, 0, 1114216, 0, 0, 1114217, 0, 0, 1114218, 0, 0, 1114219, 0, 0, 1114220, 0, 0, 1114221, 0, 0, 1114222, 0, 0, 1114223, 0, 0, 1114224, 0, 0, 1114225, 0, 0, 1114226, 0, 0, 1114227, 0, 0, 1114228, 0, 0, 1114229, 0, 0, 1114230, 0, 0, 1114231, 0, 0, 1114232, 0, 0, 1114233, 0, 0, 1114234, 0, 0, 1114235, 0, 0, 1179677, 0, 0, 1179678, 0, 0, 1179682, 0, 0, 1179683, 0, 0, 1245213, 0, 0, 1245214, 0, 0, 1245218, 0, 0, 1245219, 0, 0, 1310749, 0, 0, 1310750, 0, 0, 1310751, 0, 0, 1310752, 0, 0, 1310753, 0, 0, 1310754, 0, 0, 1310755, 0, 0, 1376285, 0, 0, 1376286, 0, 0, 1376287, 0, 0, 1376288, 0, 0, 1376289, 0, 0, 1376290, 0, 0, 1376291, 0, 0 )
+
+[node name="Mario" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96, 512 )
+collision_mask = 94
+
+[node name="Cajas" type="Node2D" parent="."]
+
+[node name="Caja" parent="Cajas" instance=ExtResource( 5 )]
+position = Vector2( 208, 416 )
+tipo_premio = true
+
+[node name="Caja2" parent="Cajas" instance=ExtResource( 5 )]
+position = Vector2( 352, 416 )
+
+[node name="Caja3" parent="Cajas" instance=ExtResource( 5 )]
+position = Vector2( 416, 416 )
+
+[node name="Caja4" parent="Cajas" instance=ExtResource( 5 )]
+position = Vector2( 384, 288 )
+
+[node name="Caja5" parent="Cajas" instance=ExtResource( 5 )]
+position = Vector2( 832, 416 )
+tipo_premio = true
+
+[node name="Caja6" parent="Cajas" instance=ExtResource( 5 )]
+position = Vector2( 1248, 288 )
+
+[node name="Caja7" parent="Cajas" instance=ExtResource( 5 )]
+position = Vector2( 1568, 416 )
+
+[node name="Caja8" parent="Cajas" instance=ExtResource( 5 )]
+position = Vector2( 1664, 416 )
+
+[node name="Caja9" parent="Cajas" instance=ExtResource( 5 )]
+position = Vector2( 1760, 416 )
+
+[node name="Caja10" parent="Cajas" instance=ExtResource( 5 )]
+position = Vector2( 1664, 288 )
+tipo_premio = true
+
+[node name="Caja11" parent="Cajas" instance=ExtResource( 5 )]
+position = Vector2( 2336, 288 )
+
+[node name="Caja12" parent="Cajas" instance=ExtResource( 5 )]
+position = Vector2( 2368, 288 )
+
+[node name="Ladrillos" type="Node2D" parent="."]
+
+[node name="Ladrillo" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 320, 384 )
+
+[node name="Ladrillo2" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 384, 384 )
+
+[node name="Ladrillo3" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 448, 384 )
+
+[node name="Ladrillo4" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 800, 384 )
+
+[node name="Ladrillo5" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 864, 384 )
+
+[node name="Ladrillo6" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 896, 256 )
+
+[node name="Ladrillo7" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 928, 256 )
+
+[node name="Ladrillo8" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 960, 256 )
+
+[node name="Ladrillo9" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 992, 256 )
+
+[node name="Ladrillo10" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 1024, 256 )
+
+[node name="Ladrillo11" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 1152, 256 )
+
+[node name="Ladrillo12" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 1184, 256 )
+
+[node name="Ladrillo13" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 1216, 256 )
+
+[node name="Ladrillo14" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 1248, 384 )
+
+[node name="Ladrillo15" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 1408, 384 )
+
+[node name="Ladrillo16" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 1440, 384 )
+
+[node name="Ladrillo17" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 1952, 384 )
+
+[node name="Ladrillo18" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 2048, 256 )
+
+[node name="Ladrillo19" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 2080, 256 )
+
+[node name="Ladrillo20" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 2112, 256 )
+
+[node name="Ladrillo21" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 2304, 256 )
+
+[node name="Ladrillo22" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 2400, 256 )
+
+[node name="Ladrillo23" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 2336, 384 )
+
+[node name="Ladrillo24" parent="Ladrillos" instance=ExtResource( 6 )]
+position = Vector2( 2368, 384 )
+
+[node name="Enemys" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemys" instance=ExtResource( 10 )]
+position = Vector2( 368, 496 )
+distancia = 5
+
+[node name="Enemy2" parent="Enemys" instance=ExtResource( 10 )]
+position = Vector2( 912, 240 )
+distancia = 5
+
+[node name="Enemy3" parent="Enemys" instance=ExtResource( 10 )]
+position = Vector2( 1040, 240 )
+distancia = 5
+
+[node name="Enemy4" parent="Enemys" instance=ExtResource( 10 )]
+position = Vector2( 1184, 496 )
+distancia = 5
+
+[node name="Enemy5" parent="Enemys" instance=ExtResource( 10 )]
+position = Vector2( 1248, 496 )
+distancia = 5
+
+[node name="Enemy6" parent="Enemys" instance=ExtResource( 10 )]
+position = Vector2( 2160, 496 )
+distancia = 5
+
+[node name="Enemy7" parent="Enemys" instance=ExtResource( 10 )]
+position = Vector2( 2208, 496 )
+distancia = 5
+
+[node name="Enemy8" parent="Enemys" instance=ExtResource( 10 )]
+position = Vector2( 2304, 496 )
+distancia = 5
+
+[node name="Enemy9" parent="Enemys" instance=ExtResource( 10 )]
+position = Vector2( 2352, 496 )
+distancia = 5
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="super_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 15 )
+autoplay = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

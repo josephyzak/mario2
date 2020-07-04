@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Super.wav-e4513ef31d723a747e1330ffc0b74702.sample"
+
+[deps]
+
+source_file="res://Sound/Super.wav"
+dest_files=[ "res://.import/Super.wav-e4513ef31d723a747e1330ffc0b74702.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

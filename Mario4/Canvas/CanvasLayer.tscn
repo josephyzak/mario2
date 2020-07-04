@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Font/Roboto_Regular.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Sprite/coin.png" type="Texture" id=2]
+[ext_resource path="res://Canvas/CanvasLayer.gd" type="Script" id=3]
+
+[node name="CanvasLayer" type="Control"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin" type="Sprite" parent="."]
+visible = false
+position = Vector2( 256, 96 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+hframes = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 124.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 156.0
+margin_bottom = 124.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mario" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_right = 156.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 1 )
+text = "MARIO"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 160.0
+margin_right = 329.0
+margin_bottom = 124.0
+
+[node name="World" type="Label" parent="HBoxContainer/VBoxContainer2"]
+margin_right = 169.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 1 )
+text = "WORLD"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 333.0
+margin_right = 449.0
+margin_bottom = 124.0
+
+[node name="Time" type="Label" parent="HBoxContainer/VBoxContainer3"]
+margin_right = 116.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 1 )
+text = "TIME"
+align = 2
